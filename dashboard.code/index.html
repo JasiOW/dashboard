@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header class="header">
+        <div class="title">
+            <h2>Dashboard</h2>
+        </div>
+        <div class="user">
+            <figure class="avatar">
+                <img src="/images/angry_cat_2-scaled.webp" alt="cat">
+            </figure>
+            <span>Jason</span>
+        </div>
+    </header>
+<!--aside-->
+    <aside class="aside">
+        <ul class="aside-menu">
+            <li class="aside-menu-item">
+                <div class="icon-box">
+                    <i class="bx bx-home"></i>
+                </div>
+            </li>
+            <li class="aside-menu-item">
+                <div class="icon-box">
+                    <i class="bx bx-user-circle"></i>
+                </div>
+            </li>
+            <li class="aside-menu-item">
+                <div class="icon-box">
+                    <i class="bx bx-chat"></i>
+                </div>
+            </li>
+            <li class="aside-menu-item">
+                <div class="icon-box">
+                    <i class="bx bx-calendar"></i>
+                </div>
+            </li> 
+            <li class="aside-menu-item">
+            <div class="icon-box">
+                <i class="bx bx-time-five"></i>
+            </div> 
+        </li>
+        </ul>
+    </aside>
+    <!--main-->
+
+    <main class="main">
+        <div class="wrapper">
+            <div class="hero">
+                <div class="hero-heading">
+                    <h3>Dashboard</h3>
+                    <h1 id="editableHeading">Välkommen!</h1>
+                    <input type="text" id="editableInput"/>
+                    <div id="datetime"></div>
+                </div>
+
+                <div class="hero-search">
+                    <div class="input-group">
+                        <button onclick="getRandomImage()">Byt bakgrund!</button>
+                    </div>
+                    <span>Filter <i class="bx bx-filer-alt"></i></span>
+                </div>
+
+                <div class="hero-heading">
+                    <h3>Personal Dashboard <i class="bx bx-chevron-down"></i></h3>
+                </div>
+
+                <div class="project">
+                    <div class="col">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <date class="date">Snabbtlänkar</date>
+                                <span><i class="bx bx-dots-vertical-rounded"></i></span>
+                            </div>
+                            <div class="card-body">
+                                <h6>Link</h6>
+                                <form id="linkForm">
+                                    <label for="link">Link:</label>
+                                    <input type="url" id="link" required>
+                                    <label for="heading">Heading</label>
+                                    <input type="text" id="heading" required>
+                                    <button type="button" onclick="addLink()">Add Link</button>
+                                </form>
+                                <ul id="linkList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <date class="date">Dagens väder</date>
+                                <span><i class="bx bx-dots-vertical-rounded"></i></span>
+                            </div>
+                            <div class="card-body">
+                                <div id="weather-container"></div>
+                                <h6></h6>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <date class="date">Nyheter</date>
+                                <span><i class="bx bx-dots-vertical-rounded"></i></span>
+                            </div>
+                            <div class="card-body">
+                                <div class="news-container" id="news-container"></div>
+                                <h6></h6>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="project-card">
+                            <div class="card-header">
+                                <date class="date">Anteckningar</date>
+                                <span><i class="bx bx-dots-vertical-rounded"></i></span>
+                            </div>
+                            <div class="card-body">
+                                <textarea id="noteArea" placeholder="Skriv dina anteckningar här..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

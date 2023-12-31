@@ -1,0 +1,431 @@
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button::after {
+    transition: background-image 0.5s ease-in-out;
+    background-size: cover;
+}
+
+/* change background button styling */
+
+.h1 {
+    cursor: pointer;
+    color: white;
+}
+
+.input[type="text"] {
+    display: none;
+    font-size: 50px;
+}
+
+/* changing title */
+
+.datetime {
+    font-size: 26px;
+    color: white;
+}
+
+/* time */
+
+.linkForm {
+    margin-bottom: 20px;
+}
+
+.linkList {
+    list-style: none;
+    padding: 0;
+    color: white;
+}
+
+.linkItem {
+    margin-bottom: 10px;
+}
+
+.removeLink {
+    cursor: pointer;
+    color: red;
+    margin-left: 10px;
+}
+
+/* adding/remove links */
+
+.weather-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* weather-container styling */
+
+
+.article h2 {
+    margin-top: 0;
+}
+
+/* news-container styling */
+
+#noteArea {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    
+}
+
+/* notes styling */
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: beige;
+    color: white
+
+}
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 15px 35px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    background-color: black;
+}
+
+header .user {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+header .user figure {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .user figure img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-borer-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+header .user span {
+    font-size: 16px;
+    font-weight: 500;;
+}
+
+/* aside */
+
+aside {
+    width: 100px;
+    height: 100%;
+    top: 70px;
+    position: fixed;
+}
+
+aside ul.aside-menu {
+    list-style: none;
+}
+
+aside ul.aside-menu li.aside-menu-item {
+    padding: 15px;
+    text-align: center;
+}
+
+aside ul.aside-menu li.aside-menu-item .icon-box {
+    font-size: 28px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-borer-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside ul.aside-menu li.aside-menu-item:hover .icon-box {
+    background-color: aquamarine;
+}
+
+/* main */
+main {
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
+main .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* hero */
+
+main .wrapper .hero {
+    flex: 0 0 70%;
+    background-color: darkcyan;
+    padding: 30px 50px;
+    border-radius: 40px;
+}
+
+main .wrapper .hero .hero-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+main .wrapper .hero .hero-heading h3 {
+    font-size: 19px;
+    line-height: 28px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+main .wrapper .hero .hero-heading span {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+main .wrapper .hero .hero-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+main .wrapper .hero .hero-search .input-group {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+}
+
+main .wrapper .hero .hero-search .input-group input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    padding-left: 45px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    transition: .3s ease;
+    color: #fff;
+}
+
+main .wrapper .hero .hero-search .input-group input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+main .wrapper .hero .hero-search span {
+    background-color: black;
+    padding: 5px 25px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+} 
+
+main .wrapper .hero .hero-search span i {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+main .wrapper .hero .project {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 2%;
+}
+
+main .wrapper .hero .project .col {
+    flex: 0 0 45%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+main .wrapper .hero .project .col .project-card {
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: black;
+}
+
+main .wrapper .hero .project .col .project-card::before {
+    content: '';
+    position: absolute;
+    top: -32px;
+    right: -32px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    z-index: 0;
+    
+}
+
+main .wrapper .hero .project .col:nth-child(1) .project-card::before {
+    background-color: greenyellow;
+    box-shadow: 0px 0px 100px 50px burlywood;
+}
+
+main .wrapper .hero .project .col:nth-child(2) .project-card::before {
+    background-color: orchid;
+    box-shadow: 0px 0px 100px 50px turquoise;
+}
+
+main .wrapper .hero .project .col:nth-child(3) .project-card::before {
+    background-color: orange;
+    box-shadow: 0px 0px 100px 50px blueviolet;
+}
+
+main .wrapper .hero .project .col:nth-child(4) .project-card::before {
+    background-color: aquamarine;
+    box-shadow: 0px 0px 100px 50px red;
+}
+
+main .wrapper .hero .project .col .project-card .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px 10px;
+}
+
+main .wrapper .hero .project .col .project-card .card-header .date {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+main .wrapper .hero .project .col .project-card .card-header span {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+main .wrapper .hero .project .col .project-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+main .wrapper .hero .project .col .project-card .card-body h6 {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+main .wrapper .hero .project .col .project-card .card-body p {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+main .wrapper .hero .project .col .project-card .card-body .progress-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main .wrapper .hero .project .col .project-card .card-body .progress-box label {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-bottom: 5px;
+}
+
+main .wrapper .hero .project .col .project-card .card-body .progress-box .progress {
+    width: 100%;
+    margin-bottom: 5px;
+    height: 10px;
+    border-radius: 20px;
+}
+
+main .wrapper .hero .project .col .project-card .card-body .progress-box .progress::-webkit-progress-bar {
+    background-color: gray;
+    border-radius: 7px;
+    background-color: limegreen;
+}
+
+main .wrapper .hero .project .col .project-card .card-body .progress-box span {
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: auto;
+}
+
+main .wrapper .hero .project .col .project-card .card-footer {
+    padding: 10px 30px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .wrapper .hero .project .col .project-card .card-footer ul.team {
+    list-style: none;
+}
+
+main .wrapper .hero .project .col .project-card .card-footer ul.team li.team-member {
+    display: inline-block;
+}
+
+main .wrapper .hero .project .col .project-card .card-footer ul.team li.team-member:not(:first-child) {
+    margin-left: -10%;
+}
+
+main .wrapper .hero .project .col .project-card .card-footer ul.team li.team-member img {
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+/* chat */
+
+
+
+
+
+
+
+
+
