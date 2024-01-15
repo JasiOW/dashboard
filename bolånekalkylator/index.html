@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Mortgage calculator</h2>
+<form id="mortgageForm">
+
+    <label for="loan">Loan:</label>
+    <input type="number" name="loan" id="loan" placeholder="Please enter the amount of loan" required>
+
+    <label for="interestRate">Interest Rate (%)</label>
+    <input type="number" name="interestRate" id="interestRate" placeholder="Please enter the interest rate" required>
+
+    <label for="repaymentPeriod">Repayment Period (Months)</label>
+    <input type="number" name="repaymentPeriod" id="repaymentPeriod" placeholder="Please enter the amount of repayment period" required>
+
+    <button id="clickButton">Calculate</button>
+</form>
+    <div id="result">
+        <h2>Result</h2>
+        <p id="monthlyFee"></p>
+        <p id="totalInterest"></p>
+        <table id="amortization">
+            
+        </table>
+    </div>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
