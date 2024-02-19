@@ -9,7 +9,46 @@ setInterval(updateDateTime, 1000);
 updateDateTime();
 // time and date
 
-document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the heading and input elements
+    var heading = document.getElementById("editableHeading");
+    var input = document.getElementById("editableInput");
+
+    // Load saved value from local storage
+    var savedValue = localStorage.getItem("editableHeading");
+    if (savedValue) {
+        heading.textContent = savedValue;
+    }
+
+    // Add click event to heading for editing
+    heading.addEventListener("click", function() {
+        // Show the input and hide the heading
+        input.style.display = "inline-block";
+        heading.style.display = "none";
+
+        // Set the input value to the current heading text
+        input.value = heading.textContent;
+
+        // Focus on the input
+        input.focus();
+    });
+
+    // Add blur event to input for saving changes
+    input.addEventListener("blur", function() {
+        // Update heading text with input value
+        heading.textContent = input.value;
+
+        // Hide the input and show the heading
+        input.style.display = "none";
+        heading.style.display = "inline-block";
+
+        // Save the new value to local storage
+        localStorage.setItem("editableHeading", input.value);
+    });
+});
+
+/*document.addEventListener('DOMContentLoaded', function () {
     const heading = document.getElementById('editableHeading');
     const input = document.getElementById('editableInput');
 
@@ -26,7 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
         heading.textContent = input.value;
 
     });
-});
+}); */
+
 // user can now edit head title
 
 //to add a new link
@@ -94,12 +134,29 @@ function addLink() {
 
     // Function to get user's location using Geolocation API
     function getLocation() {
+        console.log("hej")
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showWeather, showError);
+            console.log("funkar")
+            navigator.geolocation.getCurrentPosition(showWeather);
         } else {
             alert("Geolocation is not supported by this browser.");
         }
     }
+
+    /* let button = document.getElementById("get-location");
+    let latText = document.getElementById("latitude");
+    let longText = document.getElementById("longitude");
+
+    button.addEventListener("click", () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+    let lat = position.coords.latitude;
+    let long = position.coords.longitude;
+
+    latText.innerText = lat.toFixed(2);
+    longText.innerText = long.toFixed(2);
+  });
+});  */
+
 
     // Function to handle errors in geolocation
     function showError(error) {
@@ -120,8 +177,13 @@ function addLink() {
     }
 // Function to fetch weather data using OpenWeatherMap API
     function showWeather(position) {
+        console.log("12")
+        console.log(position.coords.latitude)
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
         const apiKey = '066f5c16af8664d29d899fe9422bc25d';
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=malm%C3%B6&appid=066f5c16af8664d29d899fe9422bc25d&units=metric";
+        // const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=malm%C3%B6&appid=066f5c16af8664d29d899fe9422bc25d&units=metric";
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
         // Fetch weather data
         fetch(apiUrl)

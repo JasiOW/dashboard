@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Page Title</title>
+</head>
+<body>
+
+    <h1>Title Changer</h1>
+    
+    <label for="newTitle">Enter New Title:</label>
+    <input type="text" id="newTitle" placeholder="Type new title...">
+    <button onclick="changeTitle()">Change Title</button>
+
+    <script>
+        // Function to change the page title and save it to localStorage
+        function changeTitle() {
+            var newTitle = document.getElementById("newTitle").value;
+
+            if (newTitle.trim() === "") {
+                alert("Please enter a valid title.");
+                return;
+            }
+
+            // Change the page title
+            document.title = newTitle;
+
+            // Save the new title in localStorage
+            localStorage.setItem("pageTitle", newTitle);
+
+            alert("Page title changed and saved!");
+        }
+
+        // Check if there is a saved title in localStorage on page load
+        window.onload = function() {
+            var savedTitle = localStorage.getItem("pageTitle");
+
+            if (savedTitle) {
+                // Restore the saved title if available
+                document.title = savedTitle;
+                document.getElementById("newTitle").value = savedTitle;
+            }
+        };
+    </script>
+
+</body>
+</html>
